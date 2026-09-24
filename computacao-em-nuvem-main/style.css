@@ -1,0 +1,175 @@
+/* =========================================================
+   Computação em Nuvem — folha de estilo compartilhada
+   Paleta: azul-marinho profundo + verde-azulado + neutros frios
+   Tipografia: Space Grotesk (títulos) + Inter (texto)
+   ========================================================= */
+
+:root{
+  --navy: #10243E;
+  --navy-2: #1A3A5C;
+  --slate: #4C6579;
+  --teal: #2E8B77;
+  --teal-dark: #1F6455;
+  --bg: #FFFFFF;
+  --bg-tint: #EEF3F4;
+  --line: #D8E0E4;
+  --ink: #16232C;
+  --ink-soft: #45535B;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, .brand{
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  color: var(--navy);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+a{ color: var(--teal-dark); text-decoration: none; }
+a:hover, a:focus{ color: var(--navy); text-decoration: underline; }
+
+/* ---------- Cabeçalho / navegação (sem JavaScript) ---------- */
+.site-header{
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.site-header .navbar{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 0.75rem;
+}
+
+.brand{
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy) !important;
+}
+.brand span{ color: var(--teal); }
+
+.nav-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a{
+  color: var(--ink-soft);
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover{
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom-color: var(--teal);
+}
+.nav-links a.active{
+  color: var(--navy);
+  border-bottom-color: var(--teal);
+}
+
+@media (max-width: 576px){
+  .nav-links{ flex-direction: column; gap: 0.6rem; width: 100%; }
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background: var(--bg-tint);
+  border-bottom: 1px solid var(--line);
+}
+.hero h1{ font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.15; }
+.hero p.lead{ color: var(--ink-soft); max-width: 42ch; }
+
+.btn-teal{
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+.btn-teal:hover{ background: var(--teal-dark); border-color: var(--teal-dark); color:#fff; }
+
+.btn-outline-navy{
+  border-color: var(--navy);
+  color: var(--navy);
+}
+.btn-outline-navy:hover{ background: var(--navy); color: #fff; }
+
+/* ---------- Ilustração da nuvem (CSS puro) ---------- */
+.cloud-art{ width: 100%; max-width: 320px; }
+
+/* ---------- Cartões de seção ---------- */
+.info-card{
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.5rem;
+  height: 100%;
+  background: var(--bg);
+}
+.info-card .icon{
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--teal-dark);
+  margin-bottom: 0.75rem;
+}
+
+.section-eyebrow{
+  color: var(--teal-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.divider{
+  height: 1px;
+  background: var(--line);
+  border: none;
+  margin: 3rem 0;
+}
+
+/* ---------- Tabelas de comparação (modelos de serviço) ---------- */
+.table thead th{
+  background: var(--navy);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+}
+
+/* ---------- Formulário de contato (sem JS, envio via mailto) ---------- */
+.form-control:focus{
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.2rem rgba(46,139,119,.2);
+}
+
+/* ---------- Rodapé ---------- */
+footer.site-footer{
+  background: var(--navy);
+  color: #C9D6DE;
+  padding: 3rem 0 2rem;
+}
+footer.site-footer a{ color: #DCE7EC; }
+footer.site-footer a:hover{ color: #fff; }
+footer.site-footer h5{
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+}
+
+.ai-disclaimer{
+  border-top: 1px solid rgba(255,255,255,.15);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  font-size: 0.85rem;
+  color: #9FB1BC;
+}
